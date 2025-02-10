@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #fbd3e9, #bb377d);
+        }
+
+        #questionContainer {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+        }
+
+        #questionContainer img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+
+        #yesBtn {
+            background-color: #ff5c8a;
+        }
+
+        #yesBtn:hover {
+            background-color: #e04d79;
+        }
+
+        #noBtn {
+            background-color: #ff7c8f;
+            position: absolute;
+        }
+
+        #noBtn:hover {
+            background-color: #e0627b;
+        }
+
+        #heartLoader {
+            display: none;
+            font-size: 18px;
+            color: #ff5c8a;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="questionContainer">
+    <img id="initialImg" src="https://media1.tenor.com/m/vgBlHnkIctQAAAAd/milk-and-mocha-bear.gif" alt="Cute bear">
+    <h1 id="questionText">Você me AMA?</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+    <div id="heartLoader">❤️ Carregando...</div>
+</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const initialImg = document.getElementById("initialImg");
+    const heartLoader = document.getElementById("heartLoader");
+    const questionText = document.getElementById("questionText"); // Captura o elemento h1
+
+    noBtn.addEventListener("mouseover", () => {
+        const container = noBtn.parentElement;
+        const newX = Math.floor(Math.random() * (container.offsetWidth - noBtn.offsetWidth));
+        const newY = Math.floor(Math.random() * (container.offsetHeight - noBtn.offsetHeight));
+        noBtn.style.left = `${newX}px`;
+        noBtn.style.top = `${newY}px`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+        heartLoader.style.display = "block";
+
+        setTimeout(() => {
+            heartLoader.style.display = "none";
+            initialImg.src = "https://th.bing.com/th/id/R.0f93ee8a89144cb8c6092f232da9c4f9?rik=n7kLGfdcMCdVAg&pid=ImgRaw&r=0";
+            questionText.textContent = "Também te amo! ❤️"; // Altera o texto do h1
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>

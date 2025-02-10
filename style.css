@@ -1,0 +1,106 @@
+/* Estilo geral */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #6d83f2, #a17efc);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Caixa de pergunta */
+#questionContainer {
+    position: relative;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+/* Título */
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #6d83f2;
+}
+
+/* Botões */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botão SIM */
+#yesBtn {
+    background-color: #4caf50;
+    color: white;
+    margin-right: 10px;
+}
+
+#yesBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Botão NÃO */
+#noBtn {
+    position: absolute;
+    background-color: #f44336;
+    color: white;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#noBtn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.1);
+}
+
+/* Loader */
+#heartLoader {
+    display: none;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+/* Resultado */
+#resultContainer {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Imagem de resultado */
+#gifResult {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) { /* Estilos para telas menores que 768px de largura (tablets e celulares) */
+    #questionContainer {
+        width: 90%; /* Ocupa 90% da largura da tela */
+        height: auto; /* Altura automática */
+    }
+    h1 {
+        font-size: 20px;
+    }
+    button {
+        font-size: 14px;
+    }
+}
